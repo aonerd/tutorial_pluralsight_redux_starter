@@ -15,6 +15,14 @@ export default function courseReducer(state = initialState.courses, action) {
                 Object.assign({}, action.course)
             ];
 
+        case types.UPDATE_COURSE_SUCCESS:
+            //NOTE:Remember state is immutable so return the state (spread) with the new course
+            console.log("courseReducer::update course success" + action.course.title);
+            return [
+                //Get all courses except that being updated
+                ...state.filter(course => course.id !== action.course.id),
+                Object.assign({}, action.course)
+            ];
         default:
             return state;
     }

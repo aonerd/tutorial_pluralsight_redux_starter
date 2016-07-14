@@ -67,6 +67,7 @@ function mapDispatchToProps(dispatch) {
         actions: bindActionCreators(courseActions, dispatch)
     };
 }
+
 //Second approach:
 /*
  function mapDispatchToProps(dispatch) {
